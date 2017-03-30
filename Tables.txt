@@ -1,0 +1,49 @@
+create table voter
+(v_id varchar(20),
+password varchar(20),
+name varchar(20),
+sex char,
+age tinyint,
+admin_id varchar(20),
+e_id int,
+primary key (v_id),
+foreign key (admin_id) references admin(admin_id),
+foreign key(e_id) references election(e_id));
+
+create table admin
+(admin_id varchar(20),
+password varchar(20),
+primary key(admin_id));
+
+create table election
+(e_id int,
+name varchar(20),
+area varchar(20),
+admin_id varchar(20),
+primary key (e_id),
+foreign key (admin_id) references admin(admin_id));
+
+create table candidate
+(c_id int,
+name varchar(20),
+sex char,
+age tinyint,
+admin_id varchar(20),
+e_id int,
+primary key (c_id),
+foreign key (admin_id) references admin(admin_id),
+foreign key (e_id) references election(e_id));
+
+
+create table count
+(c_id int,
+no_of_votes int,
+primary key(c_id),
+foreign key (c_id) references candidate(c_id));
+
+create table votes
+(v_id varchar(20),
+c_id int,
+primary key (v_id),
+foreign key (v_id) references voter(v_id),
+foreign key (c_id) references candidate(c_id));

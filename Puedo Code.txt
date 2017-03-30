@@ -1,0 +1,196 @@
+Functions Used:
+
+	void scan(void);	//Columns from keypad
+
+	void lcd_init(void);	//Initialize and activate lcd
+
+	void wr_cn(void);	//Write single command in temp2 to data lines P0.23 - P0.26
+
+	void clr_disp(void);	//Clear display of LCD
+
+	void delay_lcd(unsigned int);	//Delay for x counts
+
+	void lcd_com(void);	//Send 8 bit command by writing four bits at a time
+
+	void wr_dn(void);	//Write data in temp2 to data lines P0.23 - P0.26
+
+	void lcd_data(void);	//Send 8 bit data by writing four bits at a time
+
+	void clear_ports(void);	//Clearing Data, RS and Enable lines
+
+	void lcd_puts(unsigned char *); //Displays data on the LCD
+
+	void evaluateExpression(void);	//Evaluates the expression
+
+int main()
+{
+	Take P0.19-0.22 OUTPUT
+	Take P2.12 as Switch
+
+	Initialise LCD
+	expression[0] = '+';
+	expression[1] = '\0';
+	lcd_puts(&expression[0]);
+
+	Scanning rows of Keyboard Matrix
+	Setting flag as 0
+
+	If flag is 1 and Switch is 1
+		then input as operand
+	else
+		input as operator
+
+	when flag is 1 do switch the input
+
+	case '.': break;
+	case 'A': //Positive clear
+		expression[0] = '+';
+		i=1;
+		expression[i] = '\0';
+		break;
+						
+	case 'B': //Negative clear
+		expression[0] = '-';
+		i=1;
+		expression[i] = '\0';
+		break;	
+						
+	case 'C': //Clear retaining sign
+		expression[1] = '\0';
+		i=1;
+		break; 
+						
+	case '+' :
+		//append to expression
+		else
+			evaluateFlag = 1;
+			expression[i++] = '+';
+			expression[i] = '\0';
+			break;
+	case '-' :
+		//append to expression
+		else
+			evaluateFlag = 1;
+			expression[i++] = '-';
+			expression[i] = '\0';
+			break;
+	case '*' : 
+		//append to expression					
+		else
+			evaluateFlag = 1;
+			expression[i++] = '*';
+			expression[i] = '\0';
+			break;
+	case '/' :
+		//append to expression					
+		else
+			evaluateFlag = 1;
+			expression[i++] = '/';
+			expression[i] = '\0';
+			break;
+	case '%' :
+		//append to expression					
+		else
+			evaluateFlag = 1;
+			expression[i++] = '%';
+			expression[i] = '\0';
+			break;
+	case '^' :
+		//append to expression					
+		else
+			evaluateFlag = 1;
+			expression[i++] = '^';//exponential
+			expression[i] = '\0';
+			break;
+	case 68 :
+		//append to expression					
+			expression[i++] = 'e'; //e^num
+			expression[i] = '\0';
+	`		evaluateExpression();
+			evaluateFlag = 0;
+			break;
+	case 69 :
+		//append to expression					
+		else
+			evaluateFlag = 1;
+			expression[i++] = 's'; //sine
+			expression[i] = '\0';
+			evaluateExpression();
+			evaluateFlag = 0;
+			break;
+	case 70:
+		//append to expression
+			expression[i++] = 'c'; //cos
+			expression[i] = '\0';
+			evaluateExpression();
+			evaluateFlag = 0;
+			break;
+	case 71:
+		//append to expression				
+			expression[i++] = 't';	//tan
+			expression[i] = '\0';
+			evaluateExpression();
+			evaluateFlag = 0;
+			break;
+	case 72:
+		//append to expression	
+			expression[i++] = 'i'; //sinh
+			expression[i] = '\0';
+			evaluateExpression();
+			evaluateFlag = 0;
+			break;
+	case 73:
+		//append to expression		
+			expression[i++] = 'j'; //cosh
+			expression[i] = '\0';
+			evaluateExpression();
+			evaluateFlag = 0;
+			break;
+	case 74:
+		//append to expression
+			expression[i++] = 'k'; //tanh
+			expression[i] = '\0';
+			evaluateExpression();
+			evaluateFlag = 0;
+			break;
+	case 75:
+		//append to expression	
+			expression[i++] = 'n'; //lne
+			expression[i] = '\0';
+			evaluateExpression();
+			evaluateFlag = 0;
+	case 76:
+		//append to expression				
+			expression[i++] = 'l'; //log
+			expression[i] = '\0';
+			evaluateExpression();
+			evaluateFlag = 0;
+			break;
+
+	case '=':	evaluateExpression(); 
+			evaluateFlag = 0;
+			break; //Code to be written here
+	default:
+			expression[i++] = tempz[0];	//Operand
+			expression[i] = '\0';
+			break;
+
+	End Switch case
+	
+	Display expression on LCD
+	
+	Give delay.
+}
+	
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{13AF05D8-5C50-4843-AD12-E3568D5B1DD5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EPoller</RootNamespace>
+    <AssemblyName>EPoller</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MessagingToolkit.QRCode">
+      <HintPath>..\..\..\..\..\..\..\Akash\mySQL\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.6.7\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdministratorOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministratorOperations.Designer.cs">
+      <DependentUpon>AdministratorOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateStandings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CandidateStandings.Designer.cs">
+      <DependentUpon>CandidateStandings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeclareWinner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeclareWinner.Designer.cs">
+      <DependentUpon>DeclareWinner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAdmin.Designer.cs">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CandidateRegistration.Designer.cs">
+      <DependentUpon>CandidateRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewElection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewElection.Designer.cs">
+      <DependentUpon>NewElection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QRCode.Designer.cs">
+      <DependentUpon>QRCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Validation.Designer.cs">
+      <DependentUpon>Validation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vote.Designer.cs">
+      <DependentUpon>Vote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VoterRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VoterRegistration.Designer.cs">
+      <DependentUpon>VoterRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Winner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winner.Designer.cs">
+      <DependentUpon>Winner.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdministratorOperations.resx">
+      <DependentUpon>AdministratorOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CandidateStandings.resx">
+      <DependentUpon>CandidateStandings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeclareWinner.resx">
+      <DependentUpon>DeclareWinner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAdmin.resx">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CandidateRegistration.resx">
+      <DependentUpon>CandidateRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewElection.resx">
+      <DependentUpon>NewElection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QRCode.resx">
+      <DependentUpon>QRCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validation.resx">
+      <DependentUpon>Validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vote.resx">
+      <DependentUpon>Vote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VoterRegistration.resx">
+      <DependentUpon>VoterRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Winner.resx">
+      <DependentUpon>Winner.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vote.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnbackground2.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
